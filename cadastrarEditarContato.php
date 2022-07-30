@@ -1,8 +1,43 @@
 <?php
+
+$rdir = str_replace("\\", "/", __DIR__);                    //Root Dir
+require $rdir.'/PHPMailer/src/Exception.php';
+require $rdir.'/PHPMailer/src/PHPMailer.php';
+require $rdir.'/PHPMailer/src/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 require_once "load.php";
 
 $editarSim = false;
 $nomeIgual = false;
+
+function sendEmail($email){
+    $mail = new PHPMailer(true);
+
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Port = 587;
+    $mail->Username = 'jpsmazzaro@gmail.com';
+    $mail->Password = 'tbxhunbbybupseit';
+
+    $mail->setFrom('jpsmazzaro@gmail.com', 'JoaoPedro');
+    $mail->addAddress($email, 'User');     //Add a recipient
+   // $mail->addAddress('ellen@example.com');            //Name is optional
+   // $mail->addReplyTo('info@example.com', 'Information');
+   // $mail->addCC('cc@example.com');
+   // $mail->addBCC('bcc@example.com');
+
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Obrigado por testar meu sistema!';
+    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+}
 
 // Verificação Geral
 if (isset($_GET['nome'])) {
@@ -66,6 +101,9 @@ if (isset($_GET["cadastrar"]) && $nomeIgual === false) {
                 $inserir->bindParam('data_nascimento', $data_nascimento);
                 $inserir->bindParam('observacoes', $observacoes);
                 $inserir->execute();
+
+                sendEmail($email);
+
                 //echo "Sucesso ao inserir!";
                 echo "<div class='alert alert-success' role='alert'>
                     Sucesso ao inserir!

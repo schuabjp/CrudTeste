@@ -300,11 +300,11 @@ if ($editarSim === true) {
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Telefone</label>
-                            <input name="telefone" type="tel" class="form-control" maxlength="15">
+                            <input id="telefone" name="telefone" type="tel" class="form-control" maxlength="15">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Celular</label>
-                            <input name="celular" type="tel" class="form-control" maxlength="15">
+                            <input id="celular" name="celular" type="tel" class="form-control" maxlength="15">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Cidade</label>
@@ -320,7 +320,7 @@ if ($editarSim === true) {
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Data de Nascimento</label>
-                            <input name="data_nascimento" type="date" class="form-control">
+                            <input id="dataNasc" name="data_nascimento" type="date" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Observações</label>
@@ -358,6 +358,17 @@ if ($editarSim === true) {
 
 </div>
 <!-- End of Page Wrapper -->
+
+<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="js/jquery.mask.js"></script>
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#telefone').mask('(00)0000-0000');
+        $('#celular').mask('(00)00000-0000');
+        $('#dataNasc').mask('00/00/0000');
+    });
+</script>
+
 </body>
 
 </html>

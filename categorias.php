@@ -40,7 +40,7 @@ if (isset($_GET['excluir']) && isset($_GET['codigo'])) {
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-dice-d6"></i>
             </div>
@@ -73,7 +73,7 @@ if (isset($_GET['excluir']) && isset($_GET['codigo'])) {
                 <!-- Page Heading -->
                 <h1 class="h3 mb-4 text-gray-800">Categorias</h1>
 
-                <a href="principal.php" class="btn btn-primary btn-icon-split mb-4">
+                <a href="index.php" class="btn btn-primary btn-icon-split mb-4">
                         <span class="icon text-white-50">
                             <i class="fas fa-arrow-alt-circle-left"></i>
                         </span>

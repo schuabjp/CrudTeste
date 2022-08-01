@@ -39,7 +39,7 @@ if (isset($_GET['excluir']) && isset($_GET['codigo'])) {
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-dice-d6"></i>
             </div>
@@ -122,7 +122,7 @@ if (isset($_GET['excluir']) && isset($_GET['codigo'])) {
                             <td><?= $contato['data_nascimento']; ?></td>
                             <!--<td><?/*= $contato['observacoes']; */?></td>-->
                             <td><a class="btn btn-info" href="cadastrarEditarContato.php?editar=s&codigo=<?= $contato['codigo']; ?>">Editar</a></td>
-                            <td><a class="btn btn-danger" href="principal.php?excluir=s&codigo=<?= $contato['codigo']; ?>">Deletar</a></td>
+                            <td><a class="btn btn-danger" href="index.php?excluir=s&codigo=<?= $contato['codigo']; ?>">Deletar</a></td>
                         </tr>
                         <?php
                     }
